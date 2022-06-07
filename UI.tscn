@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI.gd" type="Script" id=1]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 428.0
+margin_top = 336.0
+margin_right = 595.0
+margin_bottom = 395.0
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 358.0
+margin_top = 220.0
+margin_right = 426.0
+margin_bottom = 239.0
+rect_scale = Vector2( 5, 5 )
+text = "Not-Pong"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

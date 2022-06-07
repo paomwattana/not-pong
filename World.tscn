@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Pad.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World.gd" type="Script" id=4]
+[ext_resource path="res://Score.tscn" type="PackedScene" id=5]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 4 )
+ball = ExtResource( 2 )
+
+[node name="PadBottom" parent="." instance=ExtResource( 1 )]
+position = Vector2( 526, 533 )
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 503, 612 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1, -1, 1025, 0, 1023, 670, 1035, 670, 1034, -14, -13, -13, -16, 647, 1, 648 )
+
+[node name="BallSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Life" type="Label" parent="."]
+margin_left = 437.0
+margin_top = 22.0
+margin_right = 484.0
+margin_bottom = 36.0
+rect_scale = Vector2( 3, 3 )
+text = "Life :: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Balls" type="Node2D" parent="."]
+
+[node name="Score" parent="." instance=ExtResource( 5 )]
+margin_left = 417.0
+margin_top = 76.0
+margin_right = 417.0
+margin_bottom = 76.0
+
+[connection signal="test" from="PadBottom" to="." method="_on_PadBottom_test"]
+[connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]
+[connection signal="timeout" from="BallSpawnTimer" to="." method="_on_BallSpawnTimer_timeout"]
