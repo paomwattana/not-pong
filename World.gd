@@ -23,10 +23,18 @@ func set_hp():
 func game_over():
 	print("game over")
 	emit_signal("game_over") # in case any other nodes wanted to use this
-	$Score/ScoreTimer.stop()
 	
+	# stop spawning new balls & pause score
+	$Score/ScoreTimer.stop()
+	$BallSpawnTimer.stop()
+	
+	# remove balls and player's pad
+	$PadBottom.queue_free()
 	get_tree().call_group("balls", "queue_free")
-	get_tree().change_scene("res://UI.tscn")
+	
+	var HighScore = preload("res://HighScore.tscn")
+	var highScore = HighScore.instance()
+	add_child(highScore)
 
 
 func _on_Goal_body_entered(body):
@@ -41,5 +49,5 @@ func _on_Goal_body_entered(body):
 
 func _on_BallSpawnTimer_timeout():
 	var ball1 = ball.instance()
-	add_child(ball1)
+	get_tree().get_root().get_node("World/Balls").add_child(ball1)
 	$BallSpawnTimer.start()

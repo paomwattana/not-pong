@@ -19,7 +19,7 @@ position = Vector2( 503, 612 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -1, -1, 1025, 0, 1023, 670, 1035, 670, 1034, -14, -13, -13, -16, 647, 1, 648 )
+polygon = PoolVector2Array( -1, -1, 1025, 0, 1023, 670, 1086, 673, 1091, -100, -94, -107, -93, 651, 1, 648 )
 
 [node name="BallSpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
