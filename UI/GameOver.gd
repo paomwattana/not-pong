@@ -9,4 +9,4 @@ func _on_RestartButton_pressed():
 	get_tree().change_scene("res://World.tscn")
 
 func _on_HomeButton_pressed():
-	get_tree().change_scene("res://UI.tscn")
+	get_tree().change_scene("res://UI/StartMenu.tscn")

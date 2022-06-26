@@ -32,7 +32,7 @@ func game_over():
 	$PadBottom.queue_free()
 	get_tree().call_group("balls", "queue_free")
 	
-	var HighScore = preload("res://HighScore.tscn")
+	var HighScore = preload("res://UI/GameOver.tscn")
 	var highScore = HighScore.instance()
 	add_child(highScore)
 
@@ -48,6 +48,8 @@ func _on_Goal_body_entered(body):
 
 
 func _on_BallSpawnTimer_timeout():
+	# spawns a ball whenever the timer runs out
+	# spawns as a child node to the "Balls" parent node
 	var ball1 = ball.instance()
 	get_tree().get_root().get_node("World/Balls").add_child(ball1)
 	$BallSpawnTimer.start()

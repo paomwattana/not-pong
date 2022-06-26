@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 
+# 13 seconds before destroyed
 var life = 13
 
 func _ready():
@@ -12,7 +13,6 @@ func _ready():
 	
 	# randomize linear velocity
 	linear_velocity = Vector2(rng.randi_range(-100, 100), rng.randi_range(-100, 100))
-	pass
 
 
 # destroy ball after hitting, otherwise it'd cause memory hog
