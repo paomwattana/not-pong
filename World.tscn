@@ -10,16 +10,24 @@
 script = ExtResource( 4 )
 ball = ExtResource( 2 )
 
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1026.0
+margin_bottom = 605.0
+color = Color( 0.145098, 0.145098, 0.145098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PadBottom" parent="." instance=ExtResource( 1 )]
-position = Vector2( 526, 533 )
+position = Vector2( 519, 484 )
 
 [node name="Goal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 503, 612 )
+position = Vector2( 503, 550 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="BorderStaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -1, -1, 1025, 0, 1023, 670, 1086, 673, 1091, -100, -94, -107, -93, 651, 1, 648 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BorderStaticBody2D"]
+polygon = PoolVector2Array( -1, -1, 1025, 0, 1023, 670, 1155, 664, 1159, -155, -153, -162, -162, 655, 1, 648 )
 
 [node name="BallSpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -43,6 +51,17 @@ margin_left = 417.0
 margin_top = 76.0
 margin_right = 417.0
 margin_bottom = 76.0
+
+[node name="MenuButton" type="MenuButton" parent="."]
+margin_left = 913.0
+margin_top = 12.0
+margin_right = 1008.0
+margin_bottom = 56.0
+text = "Menu"
+items = [ "Restart", null, 0, false, false, 0, 0, null, "", false, "Home", null, 0, false, false, 1, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="test" from="PadBottom" to="." method="_on_PadBottom_test"]
 [connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]

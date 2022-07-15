@@ -30,5 +30,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="."]
+margin_left = 392.0
+margin_top = 198.0
+margin_right = 465.0
+margin_bottom = 212.0
+rect_scale = Vector2( 3, 3 )
+text = "Game Over"
+
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]

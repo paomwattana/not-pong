@@ -10,12 +10,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 428.0
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1035.0
+margin_bottom = 607.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 420.0
 margin_top = 336.0
-margin_right = 595.0
-margin_bottom = 395.0
+margin_right = 620.0
+margin_bottom = 406.0
 text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 445.0
+margin_top = 430.0
+margin_right = 595.0
+margin_bottom = 500.0
+text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -28,4 +46,5 @@ margin_bottom = 239.0
 rect_scale = Vector2( 5, 5 )
 text = "Not-Pong"
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Game/separator.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 499, 10 )
@@ -12,5 +12,7 @@ position = Vector2( 10, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 16.0313, 0.375 )
+position = Vector2( 11.5609, -0.843239 )
+rotation = 1.5708
+scale = Vector2( 8.87454, 2.49415 )
 texture = ExtResource( 1 )
